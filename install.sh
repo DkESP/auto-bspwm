@@ -152,7 +152,8 @@ else
   	mv kitty-0.39.1-x86_64.tar kitty
   	cd kitty
 	tar -xf kitty-0.39.1-x86_64.tar
-	sudo cp -r /home/user/tools/kitty /opt
+ 	cd /opt
+	sudo cp -r /home/user/tools/kitty .
 	sudo cp -r $dir/config/kitty /root/.config/
  	rm kitty-0.39.1-x86_64.txz
  	rm kitty-0.39.1-x86_64.tar
@@ -160,7 +161,7 @@ else
 	
 	echo -e "\n${purpleColour}[*] Installing polybar...\n${endColour}"
 	sleep 2
- 	sudo cp $dir/fonts/fonts* /usr/share/fonts/truetype/
+ 	sudo cp $dir/fonts/fonts/* /usr/share/fonts/truetype/
 	if [ $? != 0 ] && [ $? != 130 ]; then
 		echo -e "\n${redColour}[-] Failed to install polybar!\n${endColour}"
 		exit 1
