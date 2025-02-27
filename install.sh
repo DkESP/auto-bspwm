@@ -155,8 +155,8 @@ else
  	cd /opt
 	sudo cp -r /home/$user/tools/kitty .
 	sudo cp -r $dir/config/kitty /root/.config/
- 	rm kitty-0.39.1-x86_64.txz
- 	rm kitty-0.39.1-x86_64.tar
+ 	rm /home/$user/tools/kitty-0.39.1-x86_64.txz
+ 	rm /home/$user/tools/kitty/kitty-0.39.1-x86_64.tar
 	cd /home/$user/tools/
 	
 	echo -e "\n${purpleColour}[*] Installing polybar...\n${endColour}"
@@ -174,7 +174,7 @@ else
 
 	echo -e "\n${purpleColour}[*] Installing picom...\n${endColour}"
 	sleep 2
-	git clone https://github.com/ibhagwan/picom.git
+	sudo git clone https://github.com/ibhagwan/picom.git
 	cd picom
 	git submodule update --init --recursive
 	meson --buildtype=release . build
