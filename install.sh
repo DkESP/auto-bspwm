@@ -189,7 +189,7 @@ else
 
 	echo -e "\n${purpleColour}[*] Installing Oh My Zsh and Powerlevel10k for user $user...\n${endColour}"
 	sudo usermod --shell /usr/bin/zsh root
-	sudo usermod --shell /usr/bin/zsh dk
+	sudo usermod --shell /usr/bin/zsh $user
  	sleep 2
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
  	if [ $? != 0 ] && [ $? != 130 ]; then
@@ -231,9 +231,9 @@ else
 	if [[ -d "~/Wallpapers" ]]; then
 		cp -rv $dir/wallpapers/* ~/Wallpapers
 	else
- 		mkdir ~/desktop/$user
-		mkdir ~/desktop/$user/Wallpapers
-		cp -rv $dir/wallpapers/* ~/Wallpapers
+ 		mkdir ~/Desktop/$user
+		mkdir ~/Desktop/$user/fondos
+		cp -rv $dir/wallpapers/* /home/$user/Desktop/$user/fondos
 	fi
 #	wal -nqi ~/Wallpapers/archkali.png
 #	sudo wal -nqi ~/Wallpapers/archkali.png
@@ -259,8 +259,8 @@ else
 	sleep 2
 	mkdir ~/.config/bin
 	touch target
- 	mkdir ~/.config/bspwm/scripts
-	cp -rv $dir/scripts/*.sh ~/.config/bspwm/scripts
+ 	#mkdir ~/.config/bspwm/scripts
+	#cp -rv $dir/scripts/* ~/.config/bspwm/scripts
 	echo -e "\n${greenColour}[+] Done\n${endColour}"
 	sleep 1.5
 
