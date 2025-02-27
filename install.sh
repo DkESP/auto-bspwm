@@ -288,7 +288,7 @@ else
 	sleep 2
 	chmod -R +x ~/.config/bspwm/
 	chmod +x ~/.config/polybar/launch.sh
-	chmod +x ~/.config/bspwm/scirpts/*
+	chmod +x ~/.config/bspwm/scirpts/ *
 	sudo chown root:root /usr/local/share/zsh/site-functions/_bspc
 	cd ..
 	echo -e "\n${greenColour}[+] Done\n${endColour}"
