@@ -251,9 +251,16 @@ else
 	cp -rv $dir/config/* ~/.config/
  	cd  ~/.config/bspwm/scripts
   	chmod +x *
+   	cd ~/tools
 	echo -e "\n${greenColour}[+] Done\n${endColour}"
 	sleep 1.5
 
+ 	echo -e "\n${purpleColour}[*] Configuring nvim\n${endColour}"
+	sudo apt remove neovim
+ 	wget https://github.com/neovim/neovim/releases/download/v0.10.4/nvim-linux-x86_64.tar.gz
+	tar -xf nvim-linux-x86_64.tar.gz
+ 	sudo mv -rv nvim-linux-x86_64 /opt/nvim/
+ 	
  	echo -e "\n${purpleColour}[*] installing the sudo zsh plugin\n${endColour}"
 	sudo mkdir /usr/share/zsh-sudo/
  	sudo wget -P /usr/share/zsh-sudo/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/refs/heads/master/plugins/sudo/sudo.plugin.zsh
