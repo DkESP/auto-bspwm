@@ -148,20 +148,15 @@ else
 	sleep 2
 	wget https://github.com/kovidgoyal/kitty/releases/download/v0.39.1/kitty-0.39.1-x86_64.txz
 	7z x kitty-0.39.1-x86_64.txz
-	rm 
 	tar -xf kitty-0.39.1-x86_64.tar
-	rm kitty-0.39.1-x86_64.tar
 	sudo cp -r $dir/config/kitty /root/.config/
+ 	rm kitty-0.39.1-x86_64.tar
+ 	rm kitty-0.39.1-x86_64.tar
 
 	echo -e "\n${purpleColour}[*] Installing polybar...\n${endColour}"
 	sleep 2
-	git clone --recursive https://github.com/polybar/polybar
-	cd polybar
-	mkdir build
-	cd build
-	cmake ..
-	make -j$(nproc)
-	sudo make install
+ 	sudo cp $dir/fonts/fonts* /usr/share/fonts/truetype/
+  	sudo fc-cahche -v
 	if [ $? != 0 ] && [ $? != 130 ]; then
 		echo -e "\n${redColour}[-] Failed to install polybar!\n${endColour}"
 		exit 1
@@ -191,10 +186,11 @@ else
 	cd ..
 
 	echo -e "\n${purpleColour}[*] Installing Oh My Zsh and Powerlevel10k for user $user...\n${endColour}"
-	sleep 2
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-	if [ $? != 0 ] && [ $? != 130 ]; then
+	sudo usermod --shell /usr/bin/zsh root
+	sudo usermod --shell /usr/bin/zsh dk
+ 	sleep 2
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+ 	if [ $? != 0 ] && [ $? != 130 ]; then
 		echo -e "\n${redColour}[-] Failed to install Oh My Zsh and Powerlevel10k for user $user!\n${endColour}"
 		exit 1
 	else
@@ -233,6 +229,7 @@ else
 	if [[ -d "~/Wallpapers" ]]; then
 		cp -rv $dir/wallpapers/* ~/Wallpapers
 	else
+ 		mkdir ~/desktop/$user
 		mkdir ~/desktop/$user/Wallpapers
 		cp -rv $dir/wallpapers/* ~/Wallpapers
 	fi
@@ -258,8 +255,9 @@ else
 
 	echo -e "\n${purpleColour}[*] Configuring scripts...\n${endColour}"
 	sleep 2
-	mkdir $pwd/.config/bin
+	mkdir ~/.config/bin
 	touch target
+ 	mkdir ~/.config/bspwm/scripts
 	cp -rv $dir/scripts/*.sh ~/.config/bspwm/scripts
 	echo -e "\n${greenColour}[+] Done\n${endColour}"
 	sleep 1.5
@@ -268,13 +266,8 @@ else
 	sleep 2
 	chmod -R +x ~/.config/bspwm/
 	chmod +x ~/.config/polybar/launch.sh
-	chmod +x ~/.config/polybar/shapes/scripts/*
-	sudo chmod +x /usr/local/bin/whichSystem.py
-	sudo chmod +x /usr/local/share/zsh/site-functions/_bspc
+	chmod +x ~/.config/bspwm/scirpts/*
 	sudo chown root:root /usr/local/share/zsh/site-functions/_bspc
-	sudo mkdir -p /root/.config/polybar/shapes/scripts/
-	sudo touch /root/.config/polybar/shapes/scripts/target
-	sudo ln -sfv ~/.config/polybar/shapes/scripts/target /root/.config/polybar/shapes/scripts/target
 	cd ..
 	echo -e "\n${greenColour}[+] Done\n${endColour}"
 	sleep 1.5
