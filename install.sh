@@ -146,16 +146,11 @@ else
 
 	echo -e "\n${purpleColour}[*] Installing kitty...\n${endColour}"
 	sleep 2
-	sudo cd /
-	sudo cd /opt
-	sudo wget https://github.com/kovidgoyal/kitty/releases/download/v0.39.1/kitty-0.39.1-x86_64.txz
-	sudo 7z x kitty-0.39.1-x86_64.txz
-	sudo rm 
-	sudo mkdir kitty
-	sudo mv kitty-0.39.1-x86_64.tar kitty
-	sudo cd kitty
-	sudo tar -xf kitty-0.39.1-x86_64.tar
-	sudo rm kitty-0.39.1-x86_64.tar
+	wget https://github.com/kovidgoyal/kitty/releases/download/v0.39.1/kitty-0.39.1-x86_64.txz
+	7z x kitty-0.39.1-x86_64.txz
+	rm 
+	tar -xf kitty-0.39.1-x86_64.tar
+	rm kitty-0.39.1-x86_64.tar
 	sudo cp -r $dir/config/kitty /root/.config/
 
 	echo -e "\n${purpleColour}[*] Installing polybar...\n${endColour}"
