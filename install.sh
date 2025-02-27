@@ -61,7 +61,7 @@ else
   else
     echo -e "\n\n${blueColour}[*] Installing necessary packages for the environment...\n${endColour}"
     sleep 2
-  sudo apt install -y polybar zsh rofi feh xclip ranger fzf i3lock-fancy scrot scrub wmname imagemagick cmatrix htop neofetch python3-pip procps tty-clock lsd bat pamixer flameshot cava 
+  sudo apt install -y polybar zsh rofi feh xclip ranger fzf i3lock-fancy scrot scrub wmname imagemagick cmatrix htop neofetch python3-pip procps tty-clock lsd bat pamixer flameshot cava jq zsh-autocomplete zsh-autosuggestions zsh-syntax-highlighting
     if [ $? != 0 ] && [ $? != 130 ]; then
       echo -e "\n${redColour}[-] Failed to install some packages!\n${endColour}"
       exit 1
@@ -241,6 +241,11 @@ else
 	echo -e "\n${greenColour}[+] Done\n${endColour}"
 	sleep 1.5
 
+ 	echo -e "\n${purpleColour}[*] Configuring fastfetch\n${endColour}"
+ 	wget https://github.com/fastfetch-cli/fastfetch/releases/download/2.37.0/fastfetch-linux-amd64.deb
+  	sudo dpkg -i fastfetch-linux-amd64.deb
+   	rm fastfetch-linux-amd64.deb
+    	sleep 2
 	echo -e "\n${purpleColour}[*] Configuring configuration files...\n${endColour}"
 	sleep 2
 	cp -rv $dir/config/* ~/.config/
@@ -249,12 +254,17 @@ else
 	echo -e "\n${greenColour}[+] Done\n${endColour}"
 	sleep 1.5
 
+ 	echo -e "\n${purpleColour}[*] installing the sudo zsh plugin\n${endColour}"
+	sudo mkdir /usr/share/zsh-sudo/
+ 	sudo wget -P /usr/share/zsh-sudo/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/refs/heads/master/plugins/sudo/sudo.plugin.zsh
+ 	
 	echo -e "\n${purpleColour}[*] Configuring the .zshrc and .p10k.zsh files...\n${endColour}"
 	sleep 2
 	cp -v $dir/.zshrc ~/.zshrc
 	sudo ln -sfv ~/.zshrc /root/.zshrc
 	cp -v $dir/.p10k.zsh ~/.p10k.zsh
-	sudo ln -sfv ~/.p10k.zsh /root/.p10k.zsh
+ 	sudo cp -v $dir/root/.p10k.zsh /root/.p10k.zsh
+	#sudo ln -sfv ~/.p10k.zsh /root/.p10k.zsh
 	echo -e "\n${greenColour}[+] Done\n${endColour}"
 	sleep 1.5
 
