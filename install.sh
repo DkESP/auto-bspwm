@@ -148,15 +148,19 @@ else
 	sleep 2
 	wget https://github.com/kovidgoyal/kitty/releases/download/v0.39.1/kitty-0.39.1-x86_64.txz
 	7z x kitty-0.39.1-x86_64.txz
+ 	mkdir kitty
+  	mv kitty-0.39.1-x86_64.tar kitty
+  	cd kitty
 	tar -xf kitty-0.39.1-x86_64.tar
+	sudo cp -r /home/user/tools/kitty /opt
 	sudo cp -r $dir/config/kitty /root/.config/
+ 	rm kitty-0.39.1-x86_64.txz
  	rm kitty-0.39.1-x86_64.tar
- 	rm kitty-0.39.1-x86_64.tar
-
+	cd ..
+	
 	echo -e "\n${purpleColour}[*] Installing polybar...\n${endColour}"
 	sleep 2
  	sudo cp $dir/fonts/fonts* /usr/share/fonts/truetype/
-  	sudo fc-cahche -v
 	if [ $? != 0 ] && [ $? != 130 ]; then
 		echo -e "\n${redColour}[-] Failed to install polybar!\n${endColour}"
 		exit 1
