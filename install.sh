@@ -174,10 +174,9 @@ else
 
 	echo -e "\n${purpleColour}[*] Installing picom...\n${endColour}"
 	sleep 2
-	sudo git clone https://github.com/ibhagwan/picom
+	git clone https://github.com/yshui/picom
 	cd picom
-	git submodule update --init --recursive
-	meson --buildtype=release . build
+	meson setup --buildtype=release build
 	ninja -C build
 	sudo ninja -C build install
 	if [ $? != 0 ] && [ $? != 130 ]; then
