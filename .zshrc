@@ -58,16 +58,16 @@ alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
 
 
-alias ff='fastfetch --kitty-direct /home/user/Desktop/dk/fondos/guts.png'
+alias ff='fastfetch --kitty-direct /home/$USER/Desktop/$USER/fondos/guts.png'
 
 function settarget(){
     ip_address=$1
     machine_name=$2
-    echo "$ip_address $machine_name" > /home/user/.config/bin/target
+    echo "$ip_address $machine_name" > /home/$USER/.config/bin/target
 }
 
 function cleartarget(){
-    echo '' > /home/user/.config/bin/target
+    echo '' > /home/$USER/.config/bin/target
 }
 
 function mkt(){
