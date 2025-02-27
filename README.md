@@ -18,5 +18,12 @@ chmod +x install.sh
 ```
 **5.** Una vez el script haya finalizado, se te dara la opcion de reiniciar el sistema(Todas las configuraciones se aplicaran una vez reinicies y cambies de entorno a BSPWM)
 
+# ATENCION 
+script probado en parrot(puedo suponer que en kali puede funcionar, pero no lo aseguro)
+**IMPORTANTE**
+revisar el archivo bspwm y .zshrc (pueden tener cadenas con usuarios erroneos, cambialo por tu usuario)
+Atajos de teclado:
+![](images/imagen_2025-02-25_231350525.png)
+
 # Fotos
 ![](images/image.png)
