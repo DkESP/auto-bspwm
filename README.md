@@ -18,3 +18,4 @@ chmod +x install.sh
 **5.** Una vez el script haya finalizado, se te dara la opcion de reiniciar el sistema(Todas las configuraciones se aplicaran una vez reinicies y cambies de entorno a BSPWM)
 
 # Fotos
+!images/image.png
