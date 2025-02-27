@@ -170,8 +170,6 @@ else
 		sleep 1.5
 	fi
 
-	cd ../../
-
 	echo -e "\n${purpleColour}[*] Installing picom...\n${endColour}"
 	sleep 2
 	git clone https://github.com/yshui/picom
