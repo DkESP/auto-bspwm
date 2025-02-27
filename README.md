@@ -1,4 +1,4 @@
-# auto-bspw
+# auto-bspwm
 Toda mi configuracion de bspwm para tener un entorno profesional pensado para hacking en parrot OS con BSPWM. # Shotout to la comunidad de Hack4u
 
 **1.** Actualizar Parrot OS
@@ -8,7 +8,8 @@ sudo parrot-upgrade -y
 ```
 **2.** Copiar el repositorio
 ```
-git clone https://github.com/DkESP/auto-bspw/
+git clone https://github.com/DkESP/auto-bspwm
+
 cd auto-bspwm
 ```
 **3.** Darle permisos de ejecucion al archivo
