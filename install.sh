@@ -153,11 +153,11 @@ else
   	cd kitty
 	tar -xf kitty-0.39.1-x86_64.tar
  	cd /opt
-	sudo cp -r /home/user/tools/kitty .
+	sudo cp -r /home/$user/tools/kitty .
 	sudo cp -r $dir/config/kitty /root/.config/
  	rm kitty-0.39.1-x86_64.txz
  	rm kitty-0.39.1-x86_64.tar
-	cd ..
+	cd /home/$user/tools/
 	
 	echo -e "\n${purpleColour}[*] Installing polybar...\n${endColour}"
 	sleep 2
