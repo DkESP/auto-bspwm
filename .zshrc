@@ -58,7 +58,7 @@ alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
 
 
-alias ff='fastfetch --kitty-direct /home/$USER/Desktop/$USER/fondos/guts.png'
+alias ff='fastfetch --kitty-direct /home/$USER/Desktop/$USER/fondos/guts2.png'
 
 function settarget(){
     ip_address=$1
