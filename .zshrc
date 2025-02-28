@@ -13,7 +13,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Created by newuser for 5.9
 
-source /home/$USER/powerlevel10k/powerlevel10k.zsh-theme
+source /$HOME/powerlevel10k/powerlevel10k.zsh-theme
 
 ##############################################################################
 #                                  PLUGINS                                   #
