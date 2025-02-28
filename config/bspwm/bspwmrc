@@ -18,7 +18,7 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 vmware-user-suid-wrapper &
-/usr/bin/feh --bg-fill /home/$USER/Desktop/$USER/fondos/fondo1.jpg
+/usr/bin/feh --bg-fill /$HOME/$USER/Desktop/$USER/fondos/fondo1.jpg
 ~/.config/polybar/./launch.sh &
 picom &
 bspc config border_width 2
