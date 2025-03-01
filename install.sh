@@ -155,8 +155,6 @@ else
  	cd /opt
 	sudo cp -r /home/$user/tools/kitty . 1>/dev/null
 	sudo cp -r $dir/config/kitty /root/.config/ 1>/dev/null
- 	#rm /home/$user/tools/kitty-0.39.1-x86_64.txz 1>/dev/null
- 	#rm /home/$user/tools/kitty/kitty-0.39.1-x86_64.tar 1>/dev/null
 	cd /home/$user/tools/
 	
 	echo -e "\n${purpleColour}[*] Installing polybar...\n${endColour}"
@@ -236,8 +234,6 @@ else
 		cp -rv $dir/wallpapers/* /home/$user/Desktop/$user/fondos 1>/dev/null
   		
 	fi
-#	wal -nqi ~/Wallpapers/archkali.png
-#	sudo wal -nqi ~/Wallpapers/archkali.png
 	echo -e "\n${greenColour}[+] Done\n${endColour}"
 	sleep 1.5
 
@@ -272,7 +268,6 @@ else
 	sudo ln -sfv ~/.zshrc /root/.zshrc 1>/dev/null
 	cp -v $dir/.p10k.zsh ~/.p10k.zsh 1>/dev/null
  	sudo cp -v $dir/root/.p10k.zsh /root/.p10k.zsh 1>/dev/null
-	#sudo ln -sfv ~/.p10k.zsh /root/.p10k.zsh
 	echo -e "\n${greenColour}[+] Done\n${endColour}"
 	sleep 1.5
 
@@ -280,8 +275,6 @@ else
 	sleep 2
 	mkdir ~/.config/bin 
 	touch  ~/.config/bin/target
- 	#mkdir ~/.config/bspwm/scripts
-	#cp -rv $dir/scripts/* ~/.config/bspwm/scripts
 	echo -e "\n${greenColour}[+] Done\n${endColour}"
 	sleep 1.5
 
@@ -289,7 +282,6 @@ else
 	sleep 2
 	chmod -R +x ~/.config/bspwm/
 	chmod +x ~/.config/polybar/launch.sh 1>/dev/null
- #	chmod +x ~/.config/bspwm/scirpts/*.sh 1>/dev/null
 	sudo chown root:root /usr/local/share/zsh/site-functions/_bspc 1>/dev/null
 	cd ..
 	echo -e "\n${greenColour}[+] Done\n${endColour}"
