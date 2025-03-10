@@ -25,7 +25,7 @@ if [ $hour -ge 00 ] && [ $hour -lt 06 ]; then
 elif [ $hour -ge 06 ] && [ $hour -lt 12 ]; then
   echo -e "${dawn}  ${reset}${ice}$date${reset}"
 elif [ $hour -ge 12 ] && [ $hour -lt 17 ]; then
-  echo -e "${sun}  ${reset}${sky}$date${reset}"
+  echo -e "${sun}  ${reset}${sky}$date${reset}"
 elif [ $hour -ge 17 ] && [ $hour -lt 22 ]; then
   echo -e "${sunsetred}  ${reset}${sky}$date${reset}"
 else
