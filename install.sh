@@ -146,12 +146,12 @@ else
 
 	echo -e "\n${purpleColour}[*] Installing kitty...\n${endColour}"
 	sleep 2
-	wget https://github.com/kovidgoyal/kitty/releases/download/v0.39.1/kitty-0.39.1-x86_64.txz 1>/dev/null
-	7z x kitty-0.39.1-x86_64.txz 1>/dev/null
+	wget https://github.com/kovidgoyal/kitty/releases/download/v0.40.0/kitty-0.40.0-x86_64.txz
+	7z x kitty-0.40.0-x86_64.txz 1>/dev/null
  	mkdir kitty 
-  	mv kitty-0.39.1-x86_64.tar kitty 1>/dev/null
+  	mv kitty-0.40.0-x86_64.tar kitty 1>/dev/null
   	cd kitty
-	tar -xf kitty-0.39.1-x86_64.tar 1>/dev/null
+	tar -xf kitty-0.40.0-x86_64.tar 1>/dev/null
  	cd /opt
 	sudo cp -r /home/$user/tools/kitty . 1>/dev/null
 	sudo cp -r $dir/config/kitty /root/.config/ 1>/dev/null
